@@ -1,0 +1,7 @@
+AWS Identity and Access Management (IAM) controls who can do what within an AWS account. It manages users, groups, roles, and the permissions policies attached to each of them.
+
+The root user is created automatically when an AWS account is opened and has unrestricted access to everything in the account, including billing. Best practice is to avoid using the root user for daily work and instead create IAM users with only the permissions they need.
+
+An IAM role is similar to a user but is not tied to a single person or long-term credentials. Roles are commonly attached to AWS resources, such as an EC2 instance, so that code running on that resource can call other AWS services securely, using short-lived credentials that are automatically rotated.
+
+Multi-factor authentication (MFA) adds a second verification step, typically a code from an authenticator app, in addition to a password. Enabling MFA on both the root user and IAM users significantly reduces the risk of unauthorized account access.
