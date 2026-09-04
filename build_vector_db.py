@@ -13,10 +13,11 @@ import json
 import boto3
 import chromadb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
+import pymupdf4llm
 
 DATA_DIR = "data"
 CHROMA_PATH = "chroma_db"
-COLLECTION_NAME = "aws_basics"
+COLLECTION_NAME = "space_apps_basics"
 EMBED_MODEL_ID = "amazon.titan-embed-text-v2:0"
 REGION = "us-east-1"
 
@@ -34,13 +35,13 @@ def embed_text(text):
 
 
 def load_documents(data_dir):
-    """Return a list of (filename, content) for every .txt file in data_dir."""
+    """Return a list of (filename, content) for every .pdf file in data_dir."""
     docs = []
     for filename in os.listdir(data_dir):
-        if filename.endswith(".txt"):
+        if filename.endswith(".pdf"):
             path = os.path.join(data_dir, filename)
-            with open(path, "r", encoding="utf-8") as f:
-                docs.append((filename, f.read()))
+            content = pymupdf4llm.to_markdown(path)
+            docs.append((filename, content))
     return docs
 
 

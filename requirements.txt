@@ -4,3 +4,4 @@ langchain
 langchain-aws
 chromadb
 langchain-text-splitters
+pymupdf4llm

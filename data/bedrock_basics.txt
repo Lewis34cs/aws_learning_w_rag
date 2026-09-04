@@ -1,7 +1,0 @@
-Amazon Bedrock is a fully managed service that provides access to foundation models from multiple providers through a single API, without requiring you to provision or manage any servers.
-
-Bedrock supports models from providers such as Amazon (the Nova and Titan families), Anthropic (Claude), and Meta (Llama), among others. Each model is identified by a model ID, and the same request format, the Converse API, can be used across most of them, making it easy to switch models with minimal code changes.
-
-Bedrock is billed per token: you pay for the amount of text sent to the model and the amount of text it generates in response. There is no dedicated free tier for Bedrock usage; costs begin with the very first request, though they are typically very small for lightweight testing.
-
-To call Bedrock from an application, the calling identity, a user or an EC2 instance role, needs IAM permissions that include the bedrock:InvokeModel action.

@@ -16,7 +16,7 @@ import streamlit as st
 from langchain_aws import ChatBedrockConverse
 
 CHROMA_PATH = "chroma_db"
-COLLECTION_NAME = "aws_basics"
+COLLECTION_NAME = "space_apps_basics"
 EMBED_MODEL_ID = "amazon.titan-embed-text-v2:0"
 LLM_MODEL_ID = "amazon.nova-micro-v1:0"
 REGION = "us-east-1"
@@ -55,8 +55,8 @@ def generate_answer(question, retrieved):
     return response.content
 
 
-st.title("AWS Basics RAG")
-st.write("Ask a question about EC2, Bedrock, or IAM, answered using the docs in data/.")
+st.title("Space Apps basics RAG Demo")
+st.write("Ask a question about Space Apps, answered using the docs in data/.")
 
 question = st.text_input("Your question:")
 

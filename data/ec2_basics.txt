@@ -1,7 +1,0 @@
-Amazon EC2 (Elastic Compute Cloud) provides resizable virtual servers, called instances, that run in AWS data centers. Instead of buying physical hardware, you rent compute capacity by the second or hour, choosing an instance type that matches your workload's CPU, memory, and network needs.
-
-Every EC2 instance launches from an Amazon Machine Image (AMI), which is a template containing an operating system and any pre-installed software. Common AMI choices include Amazon Linux and Ubuntu.
-
-Instances are protected by security groups, which act as a virtual firewall controlling which network traffic is allowed in and out. By default, a security group denies all inbound traffic until you add rules permitting specific ports and source IP addresses.
-
-EC2 instances can be stopped and started. Stopping an instance halts billing for compute time but preserves its attached storage. Terminating an instance permanently deletes it and, depending on configuration, its storage as well.
