@@ -20,7 +20,7 @@ COLLECTION_NAME = "space_apps_basics"
 EMBED_MODEL_ID = "amazon.titan-embed-text-v2:0"
 LLM_MODEL_ID = "amazon.nova-micro-v1:0"
 REGION = "us-east-1"
-TOP_K = 3
+TOP_K = 5
 
 bedrock = boto3.client("bedrock-runtime", region_name=REGION)
 chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
