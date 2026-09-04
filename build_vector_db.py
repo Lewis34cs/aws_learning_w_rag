@@ -20,6 +20,8 @@ CHROMA_PATH = "chroma_db"
 COLLECTION_NAME = "space_apps_basics"
 EMBED_MODEL_ID = "amazon.titan-embed-text-v2:0"
 REGION = "us-east-1"
+CHUNK_SIZE = 1000
+CHUNK_OVERLAP = 180
 
 bedrock = boto3.client("bedrock-runtime", region_name=REGION)
 
@@ -50,7 +52,7 @@ def main():
     docs = load_documents(DATA_DIR)
     print(f"Found {len(docs)} document(s).")
 
-    splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=80)
+    splitter = RecursiveCharacterTextSplitter(chunk_size=CHUNK_SIZE, chunk_overlap=CHUNK_OVERLAP)
 
     client = chromadb.PersistentClient(path=CHROMA_PATH)
     # Start fresh each run so re-running this script doesn't create duplicate chunks
